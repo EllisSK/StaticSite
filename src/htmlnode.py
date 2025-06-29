@@ -15,7 +15,12 @@ class HTMLNode:
         return f"HTMLNode(\nTag: {self.tag}\nValue: {self.value}\nChildren: {self.children}\nProps: {self.props})"
 
     def to_html(self):
-        raise NotImplementedError
+        if not self.tag:
+            raise ValueError("HTMLNode has no tag")
+        if not self.value:
+            raise ValueError("HTMLNode has no value")
+        else:
+            return f"<{self.tag}>{self.value}</{self.tag}>"
 
     def props_to_html(self):
         ret_string = ""
