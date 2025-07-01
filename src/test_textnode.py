@@ -22,6 +22,3 @@ class TestTextNode(unittest.TestCase):
     def test_eq_url(self):
         node1 = TextNode("T", TextType.LINK, "www.google.com")
         node2 = TextNode("T", TextType.LINK, "www.google.com")
-
-if __name__ == "__main__":
-    unittest.main()
