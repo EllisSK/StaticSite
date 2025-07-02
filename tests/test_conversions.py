@@ -1,6 +1,6 @@
 import unittest
-from conversions import text_node_to_html_node
-from textnode import TextNode, TextType
+from src.functions import text_node_to_html_node
+from src.nodes import TextNode, TextType
 
 class TestConversions(unittest.TestCase):
     def test_text(self):
