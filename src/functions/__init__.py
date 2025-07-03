@@ -4,3 +4,4 @@ from .splitnodesdelimiter import *
 from .splitnodesimage import *
 from .splitnodeslink import *
 from .texttotextnodes import *
+from .markdowntoblocks import *
