@@ -5,6 +5,10 @@ def split_nodes_link(old_nodes):
     new_nodes = []
     
     for node in old_nodes:
+        if node.text_type != TextType.TEXT:
+            new_nodes.append(node)
+            continue
+
         text = node.text
         links = re.findall(r"\[(.*?)\]\((.*?)\)", text)
 

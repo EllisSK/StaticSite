@@ -5,6 +5,10 @@ def split_nodes_delimiter(old_nodes, delimiter, text_type):
     delim_node = False
 
     for old_node in old_nodes:
+        if old_node.text_type != TextType.TEXT:
+            new_nodes.append(old_node)
+            continue
+
         text = old_node.text
         text_list = text.split(delimiter)
 
