@@ -1,5 +1,5 @@
-from nodes import TextType, TextNode
-from functions import split_nodes_delimiter, split_nodes_image, split_nodes_link
+from ..nodes import TextType, TextNode
+from ..functions import split_nodes_delimiter, split_nodes_image, split_nodes_link
 
 def text_to_textnodes(text):
     master_node = TextNode(text, TextType.TEXT)

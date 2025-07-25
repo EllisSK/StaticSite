@@ -1,5 +1,5 @@
 import re
-from nodes import TextNode, TextType
+from ..nodes import TextNode, TextType
 
 def split_nodes_link(old_nodes):
     new_nodes = []

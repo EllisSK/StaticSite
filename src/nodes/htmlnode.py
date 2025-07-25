@@ -15,15 +15,30 @@ class HTMLNode:
         return f"HTMLNode(\nTag: {self.tag}\nValue: {self.value}\nChildren: {self.children}\nProps: {self.props})"
 
     def to_html(self):
-        raise NotImplementedError
+        if self.tag is None:
+            raise ValueError("Invalid HTML: Parent node requires a tag")
+        if self.children is None:
+            raise ValueError("Invalid HTML: Parent node must have children")
+
+        # Conditionally add a space only if props exist
+        props_html = self.props_to_html()
+        if props_html:
+            props_html = " " + props_html
+        
+        children_html = ""
+        for child in self.children:
+            children_html += child.to_html()
+        
+        return f"<{self.tag}{props_html}>{children_html}</{self.tag}>"
 
     def props_to_html(self):
-        ret_string = ""
-        for item in self.props:
-            ret_string += item
-            ret_string += "="
-            ret_string += '"'
-            ret_string += self.props[item]
-            ret_string += '" '
-        ret_string = ret_string[:-1]
-        return ret_string
+        # If there are no props, return an empty string
+        if not self.props:
+            return ""
+        
+        # Otherwise, build the attribute string
+        attributes = []
+        for key, val in self.props.items():
+            attributes.append(f'{key}="{val}"')
+            
+        return " ".join(attributes)

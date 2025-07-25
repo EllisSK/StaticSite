@@ -1,4 +1,4 @@
-from nodes import BlockType
+from ..nodes import BlockType
 
 def block_to_block_type(block):
     if block[0] == "#":
