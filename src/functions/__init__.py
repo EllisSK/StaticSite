@@ -10,3 +10,4 @@ from .markdowntohtmlnode import *
 from .copystatic import *
 from .extracttitle import *
 from .generatepage import *
+from .generatepagesrecursive import *
