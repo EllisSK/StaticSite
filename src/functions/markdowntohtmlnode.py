@@ -1,5 +1,5 @@
-from src.nodes import HTMLNode, TextNode, TextType, BlockType
-from src.functions import markdown_to_blocks, text_node_to_html_node, block_to_block_type
+from nodes import HTMLNode, TextNode, TextType, BlockType
+from functions import markdown_to_blocks, text_node_to_html_node, block_to_block_type
 
 def markdown_to_html_node(markdown):
     blocks = markdown_to_blocks(markdown)

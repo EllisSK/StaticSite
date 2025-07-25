@@ -7,3 +7,4 @@ from .texttotextnodes import *
 from .markdowntoblocks import *
 from .blocktoblocktype import *
 from .markdowntohtmlnode import *
+from .copystatic import *

@@ -1,4 +1,4 @@
-from src.nodes import TextType, LeafNode
+from nodes import TextType, LeafNode
 
 def text_node_to_html_node(text_node):
     if not isinstance(text_node.text_type, TextType):
